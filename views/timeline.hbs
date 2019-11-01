@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type"
+              content="text/html; charset=utf-8" />
+        <title>Post - {{user}}</title>
+        <link href="./style.css" rel="stylesheet"
+              type="text/css" />
+    </head>
+    <body>
+        <h1>Post</h1>
+        <form action="/timeline/postar"  method="POST">
+            <div>
+                <input type="hidden" id="token" name="token" value="{{token}}">
+                <input type="hidden" name="idUser" value="{{user}}" />
+                <label for="text">Texto:</label>
+                <input type="text" id="text" name = "text" maxlength="140" required/>
+            </div>
+            <div class="button">
+                <button type="submit">Postar</button>
+            </div>
+        </form>
+        
+
+        <ul>
+        <form action="auth/listar/users" method="get" accept-charset="utf-8">
+            <div class="button">
+                <button type="submit">Quem Seguir</button>        
+            </div></form>
+        {{#each posts}}
+            <li> {{text}}
+                <form action="/timeline/delete/{{_id}}" method="post" accept-charset="utf-8">
+                    <div class="button">
+                         <button type="submit">Deletar</button>
+                    </div>
+                </form>
+                <form action="/timeline/{{_id}}" method="get" accept-charset="utf-8">
+                    <div class="button">
+                         <button type="submit">Alterar</button>
+                    </div>
+                </form>
+            </li>
+        {{/each}}
+        </ul>
+    </body>
+</html>

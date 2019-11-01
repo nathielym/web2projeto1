@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type"
+              content="text/html; charset=utf-8" />
+        <title>Post - {{user}}</title>
+        <link href="./style.css" rel="stylesheet"
+              type="text/css" />
+    </head>
+    <body>
+        <h1>Quem seguir</h1>
+        <ul>
+        {{#each users}}
+            <li> {{name}}
+                <form action="/auth/seguir/{{_id}}" method="post" accept-charset="utf-8">
+                    <div class="button">
+                         <button type="submit">Seguir</button>
+                    </div>
+                </form>
+            </li>
+        {{/each}}
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type"
+              content="text/html; charset=utf-8" />
+        <title>Post - {{user}}</title>
+        <link href="./style.css" rel="stylesheet"
+              type="text/css" />
+    </head>
+    <body>
+        <h1>Post</h1>
+        
+
+
+    {{#each post}}
+        <form action="/timeline/alterar/{{_id}}"  method="POST">
+        
+            <div>
+                <label for="text" value = {{text}}> Texto:</label>
+                <input type="text" id="text" name = "text" maxlength="140" required/>
+            </div>
+            <div class="button">
+                <button type="submit">Postar</button>
+            </div>
+        
+        </form>
+        {{/each}}
+    </body>
+</html>

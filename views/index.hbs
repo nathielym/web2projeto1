@@ -1,0 +1,31 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<p>Login</p>
+<form action="/auth/login" method="POST">
+    <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name = "name" required/>
+    </div>
+    <div>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name = "password" required/>
+    </div>
+    <div class="button">
+        <button type="submit">Realizar login</button>
+    </div>
+</form>
+
+<p>Registro</p>
+<form action="/auth/register" method="POST">
+    <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required/>
+    </div>
+    <div>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name = "password"required/>
+    </div>
+    <div class="button">
+        <button type="submit">Cadastrar</button>
+    </div>
+</form>
